@@ -13,6 +13,8 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
+#define ENABLE_V4L2_CAMERA 1
+
 using namespace std;
 
 class Logger : public nvinfer1::ILogger {
@@ -142,7 +144,8 @@ vector<DetectionBox> detectnet_v2_post_processing(const float *bboxes, const flo
 int main() {
 
     try {
-#if 1
+
+#if ENABLE_V4L2_CAMERA
         const int width = 1280;
         const int height = 720;
 
