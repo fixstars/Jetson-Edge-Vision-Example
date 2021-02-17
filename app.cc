@@ -273,7 +273,7 @@ int main() {
             for (const auto& b : boxes) {
                 const cv::Point2d p1(b.x1, b.y1);
                 const cv::Point2d p2(b.x2, b.y2);
-                const cv::Scalar color = cv::Scalar(255, 0, 0);
+                const cv::Scalar color = cv::Scalar(0, 0, 255);
                 cv::putText(frame, labels[b.class_id], cv::Point(b.x1, b.y1 - 3), cv::FONT_HERSHEY_COMPLEX, 0.5, color);
                 cv::rectangle(frame, p1, p2, color);
             }
